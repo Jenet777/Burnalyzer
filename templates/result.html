@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1, h2 {
+            color: #333333;
+        }
+        #uploadedImageResult {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <h2>The predicted severity is: {{ prediction }}</h2>
+
+        <!-- Display the uploaded image -->
+        
+        <img id="uploadedImageResult" src="{{ uploaded_image }}" alt="Uploaded Image" style="max-width: 100%;">
+    </div>
+</body>
+</html>

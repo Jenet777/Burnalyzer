@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skin Burn Severity Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e6f7ff; /* Soft blue background */
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            border: 2px solid #4CAF50; /* Green border */
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2); /* Hover effect */
+        }
+        h1 {
+            color: #4CAF50; /* Green color for the title */
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        input[type="file"], input[type="submit"] {
+            display: block;
+            margin: 15px auto;
+            padding: 12px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            width: 90%;
+        }
+        input[type="file"] {
+            background-color: #f4f4f4;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #uploadedImagePreview {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image for Burn Severity Classification</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" onchange="previewImage(event)">
+            <input type="submit" value="Upload">
+        </form>
+        
+        <!-- Display the uploaded image preview if one exists -->
+        <img id="uploadedImagePreview" alt="Uploaded Image Preview">
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const preview = document.getElementById('uploadedImagePreview');
+            const file = event.target.files[0];
+            if (file) {
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
