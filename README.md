@@ -1,7 +1,3 @@
-Here’s a suggested `README.md` for your repository:
-
----
-
 # Human Skin Burn Classification
 
 This repository contains a Flask application for classifying human skin burns into different severity levels using a trained machine learning model. The project includes a frontend with file upload functionality and displays the predicted burn severity.
