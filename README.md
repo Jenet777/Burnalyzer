@@ -43,6 +43,4 @@ python app.py
 
 The app will be accessible at `http://localhost:5000`, where you can upload images and receive burn severity predictions.
 
----
 
-This `README.md` provides an overview of the project and instructions for setting up and running the application.
